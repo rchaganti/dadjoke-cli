@@ -18,9 +18,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "dj",
-	Short: "dj retrieves dad jokes",
-	Long:  "dj is a command line tool for retrieving dad jokes from icanhazdadjoke.com",
+	Use:   "dadjoke-cli",
+	Short: "dadjoke-cli retrieves dad jokes",
+	Long:  "dadjoke-cli is a command line tool for retrieving dad jokes from icanhazdadjoke.com",
 	Run: func(cmd *cobra.Command, args []string) {
 		baseUrl, err := url.Parse("https://icanhazdadjoke.com")
 		if err != nil {
