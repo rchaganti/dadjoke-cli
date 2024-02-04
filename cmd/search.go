@@ -1,11 +1,11 @@
 package cmd
 
 import (
-	dj "github.com/rchaganti/dadjoke-go"
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
+
+	dj "github.com/rchaganti/dadjoke-go"
 
 	"github.com/spf13/cobra"
 )
@@ -38,12 +38,11 @@ var searchCmd = &cobra.Command{
 			panic(err)
 		}
 
-		json, err := json.MarshalIndent(jokes, "", "  ")
-		if err != nil {
-			panic(err)
-		}
+		jokeResults := jokes.Results
 
-		fmt.Println(string(json))
+		for i, j := range jokeResults {
+			fmt.Printf("%d. %s\n", i+1, j.Joke)
+		}
 	},
 }
 
